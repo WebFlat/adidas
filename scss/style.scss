@@ -1,5 +1,6 @@
 @import '_normalize';
 @import '_reset';
+@import '../fonts/stylesheet.css';
 
 @mixin tr($s) {
 	transition: all $s ease-in;
@@ -24,7 +25,7 @@ html {
 }
 
 body{
-	font-family: Helvetica,Arial,sans-serif;
+	font-family: AdineuePRO,Helvetica,Arial,sans-serif;
 	min-height: 100%;
 	font-size: 1.6rem;
 	line-height: 1.6;
@@ -32,7 +33,7 @@ body{
 }
 
 
-
+//Header*****************************************************************************************
 header {
 	background-color: #000;
 	color: #ebedee;
@@ -144,21 +145,19 @@ header {
 		padding: 0 5px;
 		font-size: 1.5rem;
 		font-weight: 400;
-		cursor: pointer;
 		height: 100%;
 		@include tr(.2s);
 		&:nth-child(4)::before,
 		&:nth-child(6)::before {
 			content: '';
 			width: 1px;
-			background-color: hsla(0,0%,100%,.25);
+			background-color: rgba(255, 255, 255, 0.3);;
 			height: 50%;
 			position: relative;
 			right: 4px;
 		}
 		&:hover,
-		&:focus,
-		&:active {
+		&:focus {
 			background-color: #fff;
 		}
 		&:hover .nav-bottom__link,
@@ -166,15 +165,17 @@ header {
 		&:active .nav-bottom__link {
 			color: #000;
 		}
-		&:hover .section__tab,
-		&:focus .section__tab,
-		&:active .section__tab {
+		&:hover .tabs,
+		&:focus .tabs,
+		&:active .tabs {
 			display: block;
 		} 
 	}
 	&__link {
 		text-decoration: none;
 		color: #fff;
+		font-family: AdineuePRObold,Helvetica,Arial,sans-serif;
+		font-weight: 600;
 	}
 	&__right {
 		display: flex;
@@ -230,15 +231,85 @@ header {
 		display: none;
 	}
 }
-.section__tab {
+.tabs {
 	position: absolute;
+	z-index: 5;
 	top: 80px;
 	left: 0;
 	background-color: #fff;
 	width: 100%;
-	height: 400px;
 	display: none;
+	padding: 30px 5px 10px 5%;
 }
+.tabs-list {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	&__title {
+		font-weight: 700;
+		font-size: 1.6rem;
+		color: #000;
+		text-transform: uppercase;
+		font-family: AdineuePROBold,Helvetica,Arial,sans-serif;
+	}
+	&__item {
+		width: 160px;
+		margin-right: 20px;
+		li {
+			margin-top: 2px;
+		}
+		li a {
+			font-size: 1.4rem;
+			text-decoration: none;
+			color: rgba(0, 0, 0, .9);
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+		ul {
+			height: 370px;
+			border-bottom: 1px solid rgba(0, 0, 0, .3);
+			margin-top: 10px;
+		}
+	}
+	&--spots ul,
+	&--brands ul {
+		height: auto;
+		padding-bottom: 10px;
+		border: none;
+	}
+	&__linkAll {
+		font-weight: 700;
+		font-size: 1.4rem;
+		text-decoration: none;
+		color: rgba(0, 0, 0, .9);
+		line-height: 4rem;
+		font-family: AdineuePROBold,Helvetica,Arial,sans-serif;
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: underline;
+		}
+		&--twoColumns {
+			line-height: 1;
+		}
+	}
+	&__img-wrap {
+		margin-top: 10px;
+		width: 160px;
+		height: 75px;
+		display: block;
+		overflow: hidden;
+	}
+}
+#section__sports ul {
+	height: auto;
+	padding-bottom: 10px;
+	border: none;
+}
+
 #search,
 #bag-inactive {
 	width: 24px;
@@ -249,10 +320,152 @@ header {
 	position: absolute;
 	left: 5px;
 }
-.classics {
-	position: relative;
-	z-index: -1;
-}
 
+
+
+//Main*********************************************************************************************
+.top-block {
+	position: relative;
+	&__img {
+		position: relative;
+	}
+	&__title {
+		color: #fff;
+		position: absolute;
+		left: 12%;
+		top: 40%;
+		z-index: 2;
+		font-size: 3rem;
+		width: 50%;
+		line-height: 1.2;
+		max-height: 105px;
+		overflow: hidden;
+	}
+}
+.sub-block {
+	padding: 25px;
+	width: 100%;
+	height: 550px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 25px;
+	grid-row-gap: 0px;
+	text-align: center;
+	color: #fff;
+	&__card {
+		position: relative;
+		grid-area: 1 / 1 / 2 / 2;
+		overflow: hidden;
+		background-color: #000;
+		&--right {
+			grid-area: 1 / 2 / 2 / 3;
+		}
+	}
+	&__img {
+		@include my_pos();
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		&--left {
+			@include my_pos(0, 50%, -50%, 5%);
+			height: 80%;
+			width: 90%;
+		}
+	}
+	&__title {
+		@include my_pos( 65%, 50%, -50%, -50%);
+		font-size: 2rem;
+		width: 75%;
+		max-height: 70px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	&__article {
+		@include my_pos(75%, 50%, -50%, -50%);
+		font-size: 1.6rem;
+		width: 75%;
+		max-height: 70px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
+.btn {
+	display: block;
+	background-color: #fff;
+	padding: 15px 60px 15px 30px;
+	font-size: 1.3rem;
+	text-decoration: none;
+	font-family: AdineuePROBold,Helvetica,Arial,sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #000;
+	&__arrow {
+		position: absolute;
+		width: 50px;
+		height: 20px;
+		fill: rgba(0, 0, 0, 1);
+		&--light {
+			fill: rgba(255, 255, 255, 1);
+		}
+	}
+	&--light {
+		&::before {
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border: 1px solid #fff;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: rgba(0, 0, 0, .6);
+		}
+		&:hover .btn__arrow,
+		&:focus .btn__arrow,
+		&:active .btn__arrow {
+			fill: rgba(0, 0, 0, .6);
+		}
+	}
+	&--dark {
+		color: #fff;
+		background-color: #000;
+		&::before {
+		content: '';
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border: 1px solid #000;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: rgba(255, 255, 255, .6);
+		}
+		&:hover .btn__arrow,
+		&:focus .btn__arrow,
+		&:active .btn__arrow {
+			fill: rgba(255, 255, 255, .6);
+		}
+
+	}
+	&__home-block {
+		@include my_pos(70%, 18%, -50%, -50%);
+		z-index: 2;
+	}
+	&__top-block {
+		@include my_pos(90%, 50%, -50%, -50%);
+		z-index: 2;
+	}
+}
 
 

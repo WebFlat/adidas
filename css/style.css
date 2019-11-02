@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url(../fonts/stylesheet.css);
 html {
   line-height: 1.15;
   /* 1 */
@@ -375,7 +376,7 @@ html {
   height: 100%; }
 
 body {
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: AdineuePRO,Helvetica,Arial,sans-serif;
   min-height: 100%;
   font-size: 1.6rem;
   line-height: 1.6;
@@ -516,7 +517,6 @@ header {
     padding: 0 5px;
     font-size: 1.5rem;
     font-weight: 400;
-    cursor: pointer;
     height: 100%;
     -webkit-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -524,23 +524,25 @@ header {
     .nav-bottom__tab:nth-child(4)::before, .nav-bottom__tab:nth-child(6)::before {
       content: '';
       width: 1px;
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.3);
       height: 50%;
       position: relative;
       right: 4px; }
-    .nav-bottom__tab:hover, .nav-bottom__tab:focus, .nav-bottom__tab:active {
+    .nav-bottom__tab:hover, .nav-bottom__tab:focus {
       background-color: #fff; }
     .nav-bottom__tab:hover .nav-bottom__link,
     .nav-bottom__tab:focus .nav-bottom__link,
     .nav-bottom__tab:active .nav-bottom__link {
       color: #000; }
-    .nav-bottom__tab:hover .section__tab,
-    .nav-bottom__tab:focus .section__tab,
-    .nav-bottom__tab:active .section__tab {
+    .nav-bottom__tab:hover .tabs,
+    .nav-bottom__tab:focus .tabs,
+    .nav-bottom__tab:active .tabs {
       display: block; }
   .nav-bottom__link {
     text-decoration: none;
-    color: #fff; }
+    color: #fff;
+    font-family: AdineuePRObold,Helvetica,Arial,sans-serif;
+    font-weight: 600; }
   .nav-bottom__right {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -601,14 +603,73 @@ header {
     right: 0;
     display: none; }
 
-.section__tab {
+.tabs {
   position: absolute;
+  z-index: 5;
   top: 80px;
   left: 0;
   background-color: #fff;
   width: 100%;
-  height: 400px;
-  display: none; }
+  display: none;
+  padding: 30px 5px 10px 5%; }
+
+.tabs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .tabs-list__title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #000;
+    text-transform: uppercase;
+    font-family: AdineuePROBold,Helvetica,Arial,sans-serif; }
+  .tabs-list__item {
+    width: 160px;
+    margin-right: 20px; }
+    .tabs-list__item li {
+      margin-top: 2px; }
+    .tabs-list__item li a {
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.9); }
+      .tabs-list__item li a:hover, .tabs-list__item li a:active, .tabs-list__item li a:focus {
+        text-decoration: underline; }
+    .tabs-list__item ul {
+      height: 370px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      margin-top: 10px; }
+  .tabs-list--spots ul,
+  .tabs-list--brands ul {
+    height: auto;
+    padding-bottom: 10px;
+    border: none; }
+  .tabs-list__linkAll {
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+    line-height: 4rem;
+    font-family: AdineuePROBold,Helvetica,Arial,sans-serif; }
+    .tabs-list__linkAll:hover, .tabs-list__linkAll:active, .tabs-list__linkAll:focus {
+      text-decoration: underline; }
+    .tabs-list__linkAll--twoColumns {
+      line-height: 1; }
+  .tabs-list__img-wrap {
+    margin-top: 10px;
+    width: 160px;
+    height: 75px;
+    display: block;
+    overflow: hidden; }
+
+#section__sports ul {
+  height: auto;
+  padding-bottom: 10px;
+  border: none; }
 
 #search,
 #bag-inactive {
@@ -620,6 +681,158 @@ header {
   position: absolute;
   left: 5px; }
 
-.classics {
-  position: relative;
-  z-index: -1; }
+.top-block {
+  position: relative; }
+  .top-block__img {
+    position: relative; }
+  .top-block__title {
+    color: #fff;
+    position: absolute;
+    left: 12%;
+    top: 40%;
+    z-index: 2;
+    font-size: 3rem;
+    width: 50%;
+    line-height: 1.2;
+    max-height: 105px;
+    overflow: hidden; }
+
+.sub-block {
+  padding: 25px;
+  width: 100%;
+  height: 550px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 0px;
+  text-align: center;
+  color: #fff; }
+  .sub-block__card {
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2;
+    overflow: hidden;
+    background-color: #000; }
+    .sub-block__card--right {
+      grid-area: 1 / 2 / 2 / 3; }
+  .sub-block__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+    .sub-block__img--left {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 5%);
+      -ms-transform: translate(-50%, 5%);
+      -o-transform: translate(-50%, 5%);
+      transform: translate(-50%, 5%);
+      height: 80%;
+      width: 90%; }
+  .sub-block__title {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    width: 75%;
+    max-height: 70px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  .sub-block__article {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    width: 75%;
+    max-height: 70px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+.btn {
+  display: block;
+  background-color: #fff;
+  padding: 15px 60px 15px 30px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-family: AdineuePROBold,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000; }
+  .btn__arrow {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    fill: black; }
+    .btn__arrow--light {
+      fill: white; }
+  .btn--light::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border: 1px solid #fff; }
+  .btn--light:hover, .btn--light:focus, .btn--light:active {
+    color: rgba(0, 0, 0, 0.6); }
+  .btn--light:hover .btn__arrow,
+  .btn--light:focus .btn__arrow,
+  .btn--light:active .btn__arrow {
+    fill: rgba(0, 0, 0, 0.6); }
+  .btn--dark {
+    color: #fff;
+    background-color: #000; }
+    .btn--dark::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border: 1px solid #000; }
+    .btn--dark:hover, .btn--dark:focus, .btn--dark:active {
+      color: rgba(255, 255, 255, 0.6); }
+    .btn--dark:hover .btn__arrow,
+    .btn--dark:focus .btn__arrow,
+    .btn--dark:active .btn__arrow {
+      fill: rgba(255, 255, 255, 0.6); }
+  .btn__home-block {
+    position: absolute;
+    top: 70%;
+    left: 18%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2; }
+  .btn__top-block {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2; }
