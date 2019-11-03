@@ -6,8 +6,6 @@
     src: url('adineuePROCyr-LightWeb.eot?#iefix') format('embedded-opentype'),
         url('adineuePROCyr-LightWeb.woff') format('woff'),
         url('adineuePROCyr-LightWeb.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
 }
 
 @font-face {
@@ -16,6 +14,16 @@
     src: url('adineuePROCyr-BoldWeb.eot?#iefix') format('embedded-opentype'),
         url('adineuePROCyr-BoldWeb.woff') format('woff'),
         url('adineuePROCyr-BoldWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AdihausDIN'; 
+    src: url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.eot"); 
+    src: url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.eot?#iefix") format("embedded-opentype"), 
+        url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.woff") format("woff"), 
+        url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.ttf") format("truetype"), 
+        url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.svg#AdihausDIN Cn") format("svg");
     font-weight: 700;
     font-style: normal;
 }
