@@ -744,10 +744,10 @@ body {
   background-color: rgba(197, 192, 201, 0.8);
   top: 0;
   left: 0;
-  -webkit-transform: translateY(2000px);
-  -ms-transform: translateY(2000px);
-  -o-transform: translateY(2000px);
-  transform: translateY(2000px);
+  -webkit-transform: translateY(-2000px);
+  -ms-transform: translateY(-2000px);
+  -o-transform: translateY(-2000px);
+  transform: translateY(-2000px);
   -webkit-transition: all 0.7s ease-in;
   -o-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in; }
