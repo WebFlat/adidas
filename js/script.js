@@ -39,7 +39,7 @@ $(document).ready(function() {
 	});
   $('.nav-search__close').on('click', function(e) {
     e.preventDefault;
-    $('.nav-search').css("transform", "translateY(-800px)");
+    $('.nav-search').css("transform", "translateY(-2000px)");
   })
 
 });

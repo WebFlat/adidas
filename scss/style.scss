@@ -130,7 +130,7 @@ body{
 	background-color: rgba(197, 192, 201, .8);
 	top: 0;
 	left: 0;
-	transform: translateY(-800px);
+	transform: translateY(2000px);
 	@include tr(.7s);
 	&__wrap {
 		display: flex;
