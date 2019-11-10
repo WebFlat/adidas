@@ -39,7 +39,21 @@ $(document).ready(function() {
 	});
   $('.nav-search__close').on('click', function(e) {
     e.preventDefault;
-    $('.nav-search').css("transform", "translateY(-2000px)");
+    $('.nav-search').css("transform", "translateY(-1000px)");
   })
+
+  //Open-Close feedback**************************************************************************
+  $('#feedback__btn').on('click', function(e) {
+    e.preventDefault;
+    if ($('#feedback').hasClass('feedback__active')) {
+        $('#feedback').removeClass('feedback__active');
+    } else {
+        $('#feedback').addClass('feedback__active');
+    }
+  });
+  $('#feddback-close').on('click', function(e) {
+    e.preventDefault;
+    $('#feedback').css("transform", "translateX(110%)");
+  });
 
 });
