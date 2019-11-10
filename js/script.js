@@ -6,13 +6,16 @@ $(document).ready(function() {
     margin: 5,
 	nav: true,
 	responsive:{
-        0:{
-            items:1
+        0: {
+          items: 1
         },
-        600:{
+        550:{
+            items:2
+        },
+        900:{
             items:3
         },
-        1000:{
+        1024:{
             items:4
         }
     }
@@ -39,7 +42,7 @@ $(document).ready(function() {
 	});
   $('.nav-search__close').on('click', function(e) {
     e.preventDefault;
-    $('.nav-search').css("transform", "translateY(-1000px)");
+    $('.nav-search').css("transform", "translateY(-100%)");
   })
 
   //Open-Close feedback**************************************************************************
@@ -55,5 +58,6 @@ $(document).ready(function() {
     e.preventDefault;
     $('#feedback').css("transform", "translateX(110%)");
   });
+
 
 });
