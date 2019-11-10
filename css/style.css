@@ -1122,12 +1122,15 @@ body {
     line-height: 1.2;
     height: 50px;
     overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
     text-shadow: 1px 1px #000; }
   .top-block__sup-title {
     font-size: 2rem;
     max-height: 200px;
     top: 50%;
-    width: 40%; }
+    width: 350px;
+    max-width: 40%; }
 
 .sub-block {
   padding: 25px;
