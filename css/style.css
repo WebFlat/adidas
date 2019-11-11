@@ -1110,6 +1110,9 @@ body {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
+    .top-block__img source {
+      width: 100%;
+      height: auto; }
   .top-block__title, .top-block__sup-title {
     font-family: AdineuePRO,Helvetica,Arial,sans-serif;
     color: #fff;
