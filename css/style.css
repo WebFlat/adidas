@@ -1526,7 +1526,8 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    width: 100%; }
+    width: 90%;
+    max-width: 900px; }
   .nav-links__items {
     width: 185px; }
     .nav-links__items li a {

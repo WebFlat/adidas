@@ -509,9 +509,6 @@ body{
 		// grid-area: 1 / 1 / 2 / 2;
 		overflow: hidden;
 		background-color: $dark-color;
-		&--right {
-			// grid-area: 1 / 2 / 2 / 3;
-		}
 	}
 	&__img {
 		@include my_pos();
@@ -887,7 +884,8 @@ body{
 	&__list {
 		display: flex;
 		justify-content: space-between;
-		width: 100%;
+		width: 90%;
+		max-width: 900px;
 	}
 	&__items {
 		width: 185px;
